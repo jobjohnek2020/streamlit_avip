@@ -22,6 +22,8 @@ with st.expander('About'):
   ''', language='markdown')
 # reading dataset
 df = pd.read_csv('dataset/AIDS_Classification_50000.csv')
+# Number of input features
+x_variables = len(df.columns) - 1
 # removing outliers
 Q1 = df.quantile(q=0.25)
 Q3 = df.quantile(q=0.75)
@@ -38,6 +40,8 @@ x_train,x_test,y_train,y_test = train_test_split(x_t,y,test_size=0.30,random_sta
 st.header('Input data', divider='rainbow')
 col = st.columns(4)
 col[0].metric(label='No of samples',value=len(data_clean),delta='')
-
+col[1].metric(label='No of X variables',value=x_variables,delta='')
+col[2].metric(label='No of training samples',value=x_train.shape[0],delta='')
+col[3].metric(label='No of testing samples',value=x_test.shape[0],delta='')
 
 
