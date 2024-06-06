@@ -6,7 +6,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import BernoulliNB
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score,confusion_matrix
+from sklearn.metrics import accuracy_score
 
 st.set_page_config(page_title='AIDS Virus Infection Prediction')
 st.title('AIDS Virus Infection Prediction')
@@ -77,20 +77,16 @@ with st.expander('Testing split',expanded=True):
 # Models and prediction
 models = [KNeighborsClassifier(n_neighbors=13),BernoulliNB(),SVC(),DecisionTreeClassifier(criterion='entropy')]
 scores = []
-cms = []
 for model in models:
   print(model)
   model.fit(x_train,y_train)
   y_pred = model.predict(x_test)
   score = accuracy_score(y_test,y_pred)
-  cm = confusion_matrix(y_test,y_pred)
   scores.append(score)
-  cms.append(cm)
 model_df = pd.DataFrame(
   {
     "Name" : ['KNeighborsClassifier','BernoulliNB','SVC','DecisionTreeClassifier'],
-    "Accuracy Score" : [scores[0],scores[1],scores[2],scores[3]],
-    "Confusion Matrix" : [cms[0],cms[1],cms[2],cms[3]]
+    "Accuracy Score" : [scores[0],scores[1],scores[2],scores[3]]
   }
 )
 st.header('Models and results',divider='rainbow')
