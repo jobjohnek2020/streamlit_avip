@@ -12,8 +12,8 @@ st.set_page_config(page_title='AIDS Virus Infection Prediction')
 st.title('AIDS Virus Infection Prediction')
 
 with st.expander('About'):
-  st.info(f'Used dataset in [link](%s) to predict AIDS infection','https://www.kaggle.com/datasets/aadarshvelu/aids-virus-infection-prediction')
-  
+  st.info('Used dataset in kaggle to predict AIDS infection')
+  st.link_button("AIDS Infection Prediction", 'https://www.kaggle.com/datasets/aadarshvelu/aids-virus-infection-prediction')
   st.markdown('Libraries used:')
   st.code('''- Pandas for data wrangling
 - Scikit-learn for building a machine learning model
