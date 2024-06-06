@@ -8,3 +8,7 @@ from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score,confusion_matrix
 
+st.set_page_config(page_title='AIDS Virus Infection Prediction')
+st.title('AIDS Virus Infection Prediction')
+
+
