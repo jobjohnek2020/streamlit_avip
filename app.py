@@ -87,7 +87,8 @@ model_df = pd.DataFrame(
   {
     "Name" : ['KNeighborsClassifier','BernoulliNB','SVC','DecisionTreeClassifier'],
     "Accuracy Score" : [scores[0],scores[1],scores[2],scores[3]]
-  }
+  },
+  index_col ="Name"
 )
 st.header('Models and results',divider='rainbow')
 st.dataframe(model_df,height=210,use_container_width=True)
