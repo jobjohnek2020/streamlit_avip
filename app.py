@@ -44,4 +44,8 @@ col[1].metric(label='No of X variables',value=x_variables,delta='')
 col[2].metric(label='No of training samples',value=x_train.shape[0],delta='')
 col[3].metric(label='No of testing samples',value=x_test.shape[0],delta='')
 
+# initial dataset
+with st.expander('Initial dataset',expanded=True):
+  st.dataframe(df.head(10),height=210,use_container_width=True)
+
 
