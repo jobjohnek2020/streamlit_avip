@@ -34,9 +34,10 @@ quantile_transformer = QuantileTransformer(output_distribution='normal', random_
 x_t = quantile_transformer.fit_transform(x.values)
 # splitting data as training and testing data
 x_train,x_test,y_train,y_test = train_test_split(x_t,y,test_size=0.30,random_state=1)
-
+# setting input data in UI
 st.header('Input data', divider='rainbow')
-
+col = st.columns(4)
+col[0].metric(label='No of samples',value=len(data_clean),delta='')
 
 
 
