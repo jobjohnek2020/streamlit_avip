@@ -84,11 +84,11 @@ for model in models:
   score = accuracy_score(y_test,y_pred)
   scores.append(score)
 model_df = pd.DataFrame(
-  {
+  data = {
     "Name" : ['KNeighborsClassifier','BernoulliNB','SVC','DecisionTreeClassifier'],
     "Accuracy Score" : [scores[0],scores[1],scores[2],scores[3]]
   },
-  index_col ="Name"
+  index = [1,2,3,4]
 )
 st.header('Models and results',divider='rainbow')
 st.dataframe(model_df,height=210,use_container_width=True)
