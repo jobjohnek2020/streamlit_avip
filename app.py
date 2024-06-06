@@ -20,6 +20,23 @@ with st.expander('About'):
 - Scikit-learn for building a machine learning model
 - Streamlit for user interface
   ''', language='markdown')
+# reading dataset
+df = pd.read_csv('dataset/AIDS_Classification_50000.csv')
+# removing outliers
+Q1 = df.quantile(q=0.25)
+Q3 = df.quantile(q=0.75)
+IQR = df.apply(stats.iqr)
+data_clean = df[~((df < (Q1-1.5*IQR)) | (df > (Q3+1.5*IQR))).any(axis=1)]
+# removing skewness
+x = data_clean.iloc[:,:-1]
+y = data_clean.iloc[:,-1].values
+quantile_transformer = QuantileTransformer(output_distribution='normal', random_state=1)
+x_t = quantile_transformer.fit_transform(x.values)
+# splitting data as training and testing data
+x_train,x_test,y_train,y_test = train_test_split(x_t,y,test_size=0.30,random_state=1)
+
+st.header('Input data', divider='rainbow')
+
 
 
 
