@@ -12,7 +12,7 @@ st.set_page_config(page_title='AIDS Virus Infection Prediction')
 st.title('AIDS Virus Infection Prediction')
 
 with st.expander('About'):
-  st.info(f'Used dataset in [link](%s) to predict AIDS infection','https://www.kaggle.com/datasets/aadarshvelu/aids-virus-infection-prediction)')
+  st.info(f'Used dataset in [link](%s) to predict AIDS infection','https://www.kaggle.com/datasets/aadarshvelu/aids-virus-infection-prediction')
   
   st.markdown('Libraries used:')
   st.code('''- Pandas for data wrangling
