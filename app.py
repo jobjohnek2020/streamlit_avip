@@ -88,7 +88,7 @@ for model in models:
   cms.append(cm)
 model_df = pd.DataFrame(
   {
-    "Name" : [models[0],models[1],models[2],models[3]],
+    "Name" : ['KNeighborsClassifier','BernoulliNB','SVC','DecisionTreeClassifier'],
     "Accuracy Score" : [scores[0],scores[1],scores[2],scores[3]],
     "Confusion Matrix" : [cms[0],cms[1],cms[2],cms[3]]
   }
