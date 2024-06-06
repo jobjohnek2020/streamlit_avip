@@ -77,7 +77,6 @@ with st.expander('Testing split',expanded=True):
 models = [KNeighborsClassifier(n_neighbors=13),BernoulliNB(),SVC(),DecisionTreeClassifier(criterion='entropy')]
 scores = []
 for model in models:
-  print(model)
   model.fit(x_train,y_train)
   y_pred = model.predict(x_test)
   score = accuracy_score(y_test,y_pred)
