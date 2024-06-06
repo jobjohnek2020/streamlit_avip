@@ -54,12 +54,22 @@ col[3].metric(label='No of testing samples',value=x_test.shape[0],delta='')
 with st.expander('Initial dataset',expanded=True):
   st.dataframe(df.head(10),height=210,use_container_width=True)
 
-# setting training dataset
+# setting training dataset in UI
 with st.expander('Training split',expanded=True):
   train_col = st.columns((3,1))
   with train_col[0]:
-    st.markdown('>>X<<')
+    st.markdown('X')
     st.dataframe(x_train,height=210,use_container_width=True)
   with train_col[1]:
-    st.markdown('>>Y<<')
+    st.markdown('Y')
     st.dataframe(y_train,height=210,use_container_width=True)
+
+# setting testing dataset in UI
+with st.expander('Testing split',expanded=True):
+  test_col = st.columns((3,1))
+  with test_col[0]:
+    st.markdown('X')
+    st.dataframe(x_test,height=210,use_container_width=True)
+  with test_col[1]:
+    st.markdown('Y')
+    st.dataframe(y_test,height=210,use_container_width=True)
