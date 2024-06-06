@@ -55,7 +55,7 @@ with st.expander('Initial dataset',expanded=True):
   st.dataframe(df.head(10),height=210,use_container_width=True)
 
 # setting training dataset
-with st.expander('Training split',expander=True):
+with st.expander('Training split',expanded=True):
   train_col = st.columns((3,1))
   with train_col[0]:
     st.markdown('>>X<<')
